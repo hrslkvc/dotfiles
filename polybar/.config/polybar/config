@@ -8,45 +8,40 @@
 ;=====================================================
 
 [colors]
-;orange = #FF6200
-;orange = #d65d0e
-darkgray = ${xrdb:color8}
-orange = ${xrdb:color9}
-white = #ebdbb2
-gray = #585858
-black = #090909
-red = #c795ae
-blue = #95aec7
-yellow = #c7ae95
-green = #aec795
-#background = #1f222d
-background = #282828
-background-alt = #4e4e4e
-#foreground = #dfdfdf
-foreground = ${xrdb:foreground}
-foreground-alt = #4e4e4e
-primary = #1f222d
-secondary = #FF6200
-alert = #fb4934
 
-[bar/example]
-;monitor = ${env:MONITOR:HDMI-1}
+## Base16 OceanicNext
+# Author: https://github.com/voronianski/oceanic-next-color-scheme
+#
+# You can use these variables anywhere in the i3 configuration file.
+#
+base00 = #1B2B34
+base01 = #343D46
+base02 = #4F5B66
+base03 = #65737E
+base04 = #A7ADBA
+base05 = #C0C5CE
+base06 = #CDD3DE
+base07 = #D8DEE9
+base08 = #EC5f67
+base09 = #F99157
+base0A = #FAC863
+base0B = #99C794
+base0C = #5FB3B3
+base0D = #6699CC
+base0E = #C594C5
+base0F = #AB7967
+
+[bar/mybar]
 width = 100%
 height = 27
-;offset-x = 1%
-;offset-y = 1%
-;radius = 6.0
 fixed-center = false
 bottom = true
 
-background = ${colors.background}
-foreground = ${colors.foreground}
+background = ${colors.base00}
+foreground = ${colors.base07}
 
-line-size = 3
-line-color = #073642
-
-;border-size = 4
-;border-color = #00000000
+line-size = 2
+line-color = ${colors.base0D}
 
 padding-left = 0
 padding-right = 2
@@ -54,229 +49,124 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
-font-3 = FontAwesome:pixelsize=10;1
+font-0 = "Ubuntu Mono:size=10;2"
+font-1 = unifont:fontformat=truetype:size=8:antialias=false
+font-2 = siji:pixelsize=10
+font-3 = FontAwesome:pixelsize=10;2
 
-modules-left = bspwm i3
-modules-center =
+modules-left = i3
+modules-center = xwindow
 modules-right = weather date powermenu
 
 tray-position = right
-tray-padding = 2
-;tray-transparent = true
-;tray-background = #0063ff
+tray-background = ${colors.base0C}
 
-;wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
-
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
 
 [module/weather]
 type = custom/script
 interval = 1800
 format = <label>
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
+format-prefix-foreground = ${colors.base07}
 exec = ~/.config/polybar/weather
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
-
-[
-
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
-
-[module/bspwm]
-type = internal/bspwm
-
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-
-label-occupied = %index%
-label-occupied-padding = 2
-
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label = %title%
 
 [module/i3]
 type = internal/i3
-format = <label-state> <label-mode>
 index-sort = true
+
+; Create click handler used to focus workspace
+; Default: true
+enable-click = true
+
+; Create scroll handlers used to cycle workspaces
+; Default: true
+enable-scroll = true
+
+; Wrap around when reaching the first/last workspace
+; Default: true
 wrapping-scroll = false
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
+; Set the scroll cycle direction 
+; Default: true
+reverse-scroll = true
 
-; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+; Use fuzzy (partial) matching on labels when assigning 
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces 
+; containing 'code' in the label
+; Default: false
+fuzzy-match = true
 
-label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
+format = <label-state> <label-mode>
 
-; focused = Active workspace on focused monitor
-label-focused = %icon%
-label-focused-background = ${colors.background}
-label-focused-underline = ${colors.orange}
-label-focused-padding = ${module/bspwm.label-focused-padding}
+; Available tokens:
+;   %mode%
+; Default: %mode%
+label-mode = %mode%
+;label-mode-padding = 2
+label-mode-background = #EC5f67
 
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %icon%
-label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-focused = 
+;label-focused-foreground = #ffffff
+;label-focused-background = #EC5f67
+label-focused-underline = ${colors.base0B}
+label-focused-padding = 2
 
-; visible = Active workspace on unfocused monitor
-label-visible = %icon%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-unfocused = 
+label-unfocused-padding = 2
 
-; urgent = Workspace with urgency hint set
-label-urgent = %icon%
-label-urgent-background = ${module/bspwm.label-urgent-background}
-label-urgent-padding = ${module/bspwm.label-urgent-padding}
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-visible = %index%
+label-visible-underline = #555555
+label-visible-padding = 4
 
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
-
-[module/xbacklight]
-type = internal/xbacklight
-
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #ff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
-
-
-
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
-format-underline = #f90000
-label = %percentage%%
-
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
-format-underline = #4bffdc
-label = %percentage_used%%
-
-
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-urgent = %index%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-padding = 2
 
 [module/date]
 type = internal/date
 interval = 5
 
-date = " %d-%m-%Y"
-date-alt = " %Y-%m-%d"
-
+date = "%a %d-%m-%Y"
 time = %H:%M
-time-alt = %H:%M:%S
 
 format-prefix = "  "
-format-prefix-foreground = ${colors.foreground}
-;format-underline = #0a6cf5
+format-prefix-foreground = ${colors.base07}
+
 
 label = %date%    %time%
 
-[module/volume]
-type = internal/volume
-
-format-volume = <label-volume> <bar-volume>
-label-volume = 
-label-volume-foreground = ${root.foreground}
-
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
-
-
-
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
-
-label = %temperature%
-label-warn = %temperature%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
@@ -284,11 +174,11 @@ type = custom/menu
 format-spacing = 1
 
 label-open = 
-label-open-foreground = ${colors.foreground}
+label-open-foreground = ${colors.base07}
 label-close =  cancel
-label-close-foreground = ${colors.secondary}
+label-close-foreground = ${colors.base08}
 label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
+label-separator-foreground = ${colors.base06}
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
@@ -307,13 +197,10 @@ menu-2-1-exec = menu-open-0
 
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
+
 
 [global/wm]
 margin-top = 5
 margin-bottom = 5
 
-; vim:ft=dosini
+

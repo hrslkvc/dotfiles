@@ -9,9 +9,9 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'lifepillar/vim-solarized8'
 Plugin 'morhetz/gruvbox'
 Plugin 'Raimondi/delimitMate'
+Plugin 'chriskempson/base16-vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -43,4 +43,4 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix |
 
 
-colorscheme gruvbox
+colorscheme base16-ocean 

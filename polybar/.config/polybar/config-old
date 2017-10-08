@@ -6,17 +6,50 @@
 ;   The README contains alot of information
 ;
 ;=====================================================
+## Base16 OceanicNext
+# Author: https://github.com/voronianski/oceanic-next-color-scheme
+#
+# You can use these variables anywhere in the i3 configuration file.
+#
+#set $base00 #1B2B34
+#set $base01 #343D46
+#set $base02 #4F5B66
+#set $base03 #65737E
+#set $base04 #A7ADBA
+#set $base05 #C0C5CE
+#set $base06 #CDD3DE
+#set $base07 #D8DEE9
+#set $base08 #EC5f67
+#set $base09 #F99157
+#set $base0A #FAC863
+#set $base0B #99C794
+#set $base0C #5FB3B3
+#set $base0D #6699CC
+#set $base0E #C594C5
+#set $base0F #AB7967
+
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #002b36
-background-alt = #073642
-;foreground = ${xrdb:color7:#222}
-foreground = #839496
-foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+;orange = #FF6200
+;orange = #d65d0e
+darkgray = ${xrdb:color8}
+orange = #a7adba
+white = #ebdbb2
+gray = #585858
+black = #090909
+red = #c795ae
+blue = #95aec7
+yellow = #c7ae95
+green = #aec795
+#background = #1f222d
+background = #1b2b34
+background-alt = #4e4e4e
+#foreground = #dfdfdf
+foreground = ${xrdb:foreground}
+foreground-alt = #4e4e4e
+primary = #1f222d
+secondary = #FF6200
+alert = #fb4934
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -48,8 +81,8 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 font-3 = FontAwesome:pixelsize=10;1
 
-modules-left = bspwm i3
-modules-center =
+modules-left = i3
+modules-center = xwindow
 modules-right = weather date powermenu
 
 tray-position = right
@@ -79,9 +112,8 @@ exec = ~/.config/polybar/weather
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title%
 
-[
 
 [module/filesystem]
 type = internal/fs
@@ -92,25 +124,6 @@ mount-0 = /
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
-
-[module/bspwm]
-type = internal/bspwm
-
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-
-label-occupied = %index%
-label-occupied-padding = 2
-
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
 
 [module/i3]
 type = internal/i3
@@ -124,17 +137,18 @@ ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
 
+
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-foreground = #EC5f67
+label-mode-background = #D8DEE9
 
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
-label-focused-background = ${module/bspwm.label-focused-background}
-label-focused-underline = ${module/bspwm.label-focused-underline}
+label-focused-background = #D8DEE9
+label-focused-underline = ${colors.orange}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 ; unfocused = Inactive workspace on any monitor
@@ -206,11 +220,8 @@ label = %percentage_used%%
 type = internal/date
 interval = 5
 
-date = " %d-%m-%Y"
-date-alt = " %Y-%m-%d"
-
+date = "%a %d-%m-%Y"
 time = %H:%M
-time-alt = %H:%M:%S
 
 format-prefix = "  "
 format-prefix-foreground = ${colors.foreground}
