@@ -7,4 +7,4 @@ info = r.json()
 weather = info["current_observation"]["weather"]
 temp = info["current_observation"]["temp_c"]
 
-print(weather, temp,  "°C")
+print(weather, str(temp) + "°C")
