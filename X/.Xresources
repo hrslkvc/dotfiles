@@ -51,3 +51,19 @@ URxvt*saveLines: 1000
 *.color13:      base06
 *.color14:      base0F
 *.color15:      base07
+
+rofi.color-enabled: true
+!                  bg       border   separator
+rofi.color-window: base00,  base07,  base0E
+!                  bg       fg       bg-alt   hl-bg    hl-fg
+rofi.color-normal: base00, base0D, #32302f, base0C, #fbf1c7
+rofi.color-active: base0C, base0C, base0C, base0C, base0C
+rofi.color-urgent: #cc241d, #282828, #cc241d, #fb4934, #282828
+
+rofi.separator-style: solid
+rofi.sidebar-mode: true
+rofi.bw: 1
+rofi.columns: 1
+rofi.padding: 16
+
+
