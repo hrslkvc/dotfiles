@@ -6,6 +6,8 @@ URxvt.scrollBar: false
 URxvt.intensityStyles: false
 URxvt*saveLines: 1000
 
+
+
 ! Base16 OceanicNext
 ! Scheme: https://github.com/voronianski/oceanic-next-color-scheme
 

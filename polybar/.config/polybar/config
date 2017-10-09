@@ -140,7 +140,7 @@ label-unfocused-padding = 2
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-visible = %index%
+label-visible = 
 label-visible-underline = #555555
 label-visible-padding = 4
 
@@ -149,7 +149,7 @@ label-visible-padding = 4
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-urgent = %index%
+label-urgent = 
 label-urgent-foreground = #000000
 label-urgent-background = #bd2c40
 label-urgent-padding = 2
