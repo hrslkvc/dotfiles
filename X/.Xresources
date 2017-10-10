@@ -1,7 +1,7 @@
 URxvt.cursorBlink: 1
 URxvt.letterSpace: -1
 URxvt.lineSpace: 4
-URxvt.font: xft:Ubuntu Mono:size=11
+URxvt.font: xft:Ubuntu Mono:size=11,xft:Noto Color Emoji
 URxvt.scrollBar: false
 URxvt.intensityStyles: false
 URxvt*saveLines: 1000
