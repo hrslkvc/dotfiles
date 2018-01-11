@@ -8,6 +8,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
+
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'Raimondi/delimitMate'
@@ -26,13 +27,15 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-let base16colorspace=256
+
+colorscheme gruvbox
+set background=light
+"let base16colorspace=256
 set showcmd
 set linespace=10
 syntax on
 set nu
 filetype indent plugin on
-set background=dark
 set gfn=Ubuntu\ Mono\ 12 
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
@@ -44,4 +47,3 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix |
 
 
-colorscheme base16-ocean 

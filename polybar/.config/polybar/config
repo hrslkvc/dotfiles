@@ -9,27 +9,34 @@
 
 [colors]
 
-## Base16 OceanicNext
-# Author: https://github.com/voronianski/oceanic-next-color-scheme
-#
-# You can use these variables anywhere in the i3 configuration file.
-#
-base00 = #1B2B34
-base01 = #343D46
-base02 = #4F5B66
-base03 = #65737E
-base04 = #A7ADBA
-base05 = #C0C5CE
-base06 = #CDD3DE
-base07 = #D8DEE9
-base08 = #EC5f67
-base09 = #F99157
-base0A = #FAC863
-base0B = #99C794
-base0C = #5FB3B3
-base0D = #6699CC
-base0E = #C594C5
-base0F = #AB7967
+! hard contrast: *background: #1d2021
+background = #282828
+! soft contrast: *background: #32302f
+foreground = #ebdbb2
+! Black + DarkGrey
+color0 =  #282828
+color8 =  #928374
+! DarkRed + Red
+color1 =  #cc241d
+color9 =  #fb4934
+! DarkGreen + Green
+color2 =  #98971a
+color10 = #b8bb26
+! DarkYellow + Yellow
+color3 =  #d79921
+color11 = #fabd2f
+! DarkBlue + Blue
+color4 =  #458588
+color12 = #83a598
+! DarkMagenta + Magenta
+color5 =  #b16286
+color13 = #d3869b
+! DarkCyan + Cyan
+color6 =  #689d6a
+color14 = #8ec07c
+! LightGrey + White
+color7 =  #a89984
+color15 = #ebdbb2
 
 [bar/mybar]
 width = 100%
@@ -37,11 +44,11 @@ height = 27
 fixed-center = true 
 bottom = true
 
-background = ${colors.base00}
-foreground = ${colors.base07}
+background = ${colors.background}
+foreground = ${colors.foreground}
 
 line-size = 2
-line-color = ${colors.base0D}
+line-color = ${colors.color11}
 
 padding-left = 0
 padding-right = 2
@@ -50,16 +57,16 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = "Ubuntu Mono:size=10;2"
-font-1 = unifont:fontformat=truetype:size=8:antialias=false
+font-1 = FontAwesome:pixelsize=10;2 
 font-2 = siji:pixelsize=10
-font-3 = FontAwesome:pixelsize=10;2
+font-3 = unifont:fontformat=truetype:size=8:antialias=false
 
 modules-left = i3
 modules-center = xwindow
 modules-right = weather date powermenu
 
 tray-position = right
-tray-background = ${colors.base0C}
+tray-background = #32302f
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -69,7 +76,7 @@ type = custom/script
 interval = 1800
 format = <label>
 format-prefix = " "
-format-prefix-foreground = ${colors.base07}
+format-prefix-foreground = ${colors.foreground}
 exec = ~/.config/polybar/weather
 
 [module/xwindow]
@@ -122,9 +129,9 @@ label-mode-background = #EC5f67
 ;   %output%
 ; Default: %icon%  %name%
 label-focused = 
-;label-focused-foreground = #ffffff
+label-focused-foreground = ${colors.foreground}
 ;label-focused-background = #EC5f67
-label-focused-underline = ${colors.base0B}
+label-focused-underline = ${colors.foreground}
 label-focused-padding = 2
 
 ; Available tokens:
@@ -134,6 +141,7 @@ label-focused-padding = 2
 ; Default: %icon%  %name%
 label-unfocused = 
 label-unfocused-padding = 2
+label-unfocused-foreground = ${colors.foreground}
 
 ; Available tokens:
 ;   %name%
@@ -162,7 +170,7 @@ date = "%a %d-%m-%Y"
 time = %H:%M
 
 format-prefix = "  "
-format-prefix-foreground = ${colors.base07}
+format-prefix-foreground = ${colors.foreground}
 
 
 label = %date%    %time%
@@ -174,11 +182,11 @@ type = custom/menu
 format-spacing = 1
 
 label-open = 
-label-open-foreground = ${colors.base07}
+label-open-foreground = ${colors.foreground}
 label-close =  cancel
-label-close-foreground = ${colors.base08}
+label-close-foreground = ${colors.color1}
 label-separator = |
-label-separator-foreground = ${colors.base06}
+label-separator-foreground = ${colors.foreground}
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1

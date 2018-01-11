@@ -1,3 +1,48 @@
+
+! -----------------------------------------------------------------------------
+! File: gruvbox-dark.xresources
+! Description: Retro groove colorscheme generalized
+! Author: morhetz <morhetz@gmail.com>
+! Source: https://github.com/morhetz/gruvbox-generalized
+! Last Modified: 6 Sep 2014
+! -----------------------------------------------------------------------------
+
+! hard contrast: *background: #1d2021
+*background: #282828
+! soft contrast: *background: #32302f
+*foreground: #ebdbb2
+! Black + DarkGrey
+*color0:  #282828
+*color8:  #928374
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #fb4934
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #b8bb26
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #fabd2f
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #83a598
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #d3869b
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #8ec07c
+! LightGrey + White
+*color7:  #a89984
+*color15: #ebdbb2
+
+
+st.termname:     st-256color
+st.font: Ubuntu Mono:size=11:antialias=true:autohint=true;
+st.bold_font:    1
+st.cursorblinkstyle: 0
+st.cursorblinkontype: 0
+st.blinktimeout: 500
 URxvt.cursorBlink: 1
 URxvt.letterSpace: -1
 URxvt.lineSpace: 4
@@ -6,66 +51,16 @@ URxvt.scrollBar: false
 URxvt.intensityStyles: false
 URxvt*saveLines: 1000
 
-
-
-! Base16 OceanicNext
-! Scheme: https://github.com/voronianski/oceanic-next-color-scheme
-
-#define base00 #1B2B34
-#define base01 #343D46
-#define base02 #4F5B66
-#define base03 #65737E
-#define base04 #A7ADBA
-#define base05 #C0C5CE
-#define base06 #CDD3DE
-#define base07 #D8DEE9
-#define base08 #EC5f67
-#define base09 #F99157
-#define base0A #FAC863
-#define base0B #99C794
-#define base0C #5FB3B3
-#define base0D #6699CC
-#define base0E #C594C5
-#define base0F #AB7967
-
-*.foreground:   base05
-#ifdef background_opacity
-*.background:   [background_opacity]base00
-#else
-*.background:   base00
-#endif
-*.cursorColor:  base05
-
-*.color0:       base00
-*.color1:       base08
-*.color2:       base0B
-*.color3:       base0A
-*.color4:       base0D
-*.color5:       base0E
-*.color6:       base0C
-*.color7:       base05
-
-*.color8:       base03
-*.color9:       base09
-*.color10:      base01
-*.color11:      base02
-*.color12:      base04
-*.color13:      base06
-*.color14:      base0F
-*.color15:      base07
-
 rofi.color-enabled: true
 !                  bg       border   separator
-rofi.color-window: base00,  base07,  base0E
+!rofi.color-window: base00,  base07,  base0E
 !                  bg       fg       bg-alt   hl-bg    hl-fg
-rofi.color-normal: base00, base0D, #32302f, base0C, #fbf1c7
-rofi.color-active: base0C, base0C, base0C, base0C, base0C
-rofi.color-urgent: #cc241d, #282828, #cc241d, #fb4934, #282828
+!rofi.color-normal: base00, base0D, #32302f, base0C, #fbf1c7
+!rofi.color-active: base0C, base0C, base0C, base0C, base0C
+!rofi.color-urgent: #cc241d, #282828, #cc241d, #fb4934, #282828
 
 rofi.separator-style: solid
 rofi.sidebar-mode: true
-rofi.bw: 1
+rofi.bw: 0
 rofi.columns: 1
 rofi.padding: 16
-
-
