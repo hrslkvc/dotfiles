@@ -67,6 +67,7 @@ modules-right = weather date powermenu
 
 tray-position = right
 tray-background = #32302f
+tray-foreground = #d5c4a1
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev

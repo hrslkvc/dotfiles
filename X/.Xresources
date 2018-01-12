@@ -73,8 +73,8 @@ rofi.color-enabled: true
 !                  bg       border   separator
 rofi.color-window: base00,  base07,  base0E
 !                  bg       fg       bg-alt   hl-bg    hl-fg
-rofi.color-normal: base00, base0D, base04, base01
-rofi.color-active: base03, base03, base03, base03, base03
+rofi.color-normal: base00, base05, base04, base01
+rofi.color-active: base03, base05, base03, base03, base03
 rofi.color-urgent: #cc241d, #282828, #cc241d, #fb4934, #282828
 
 rofi.separator-style: solid
