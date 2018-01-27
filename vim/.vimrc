@@ -11,7 +11,6 @@ call vundle#begin()
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Raimondi/delimitMate'
-Plugin 'chriskempson/base16-vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -26,13 +25,15 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
-colorscheme solarized
+set number
+set t_Co=256
+syntax enable
+let g:solarized_termtrans = 1
+let g:solarized_termcolors=256
 set background=light
-"let base16colorspace=256
+colorscheme solarized
 set showcmd
 set linespace=10
-syntax on
 set nu
 filetype indent plugin on
 set gfn=Ubuntu\ Mono\ 12 
