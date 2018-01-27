@@ -18,6 +18,8 @@ bindkey -v
 zstyle :compinstall filename '/home/haris/.zshrc'
 # End of lines added by compinstall
 
+
+
 POWERLEVEL9K_MODE='awesome-fontconfig'
 source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 

@@ -50,4 +50,5 @@ color21 = #073642
 
 [options]
 font = Hack 10
+allow_bold = false
 cursor_shape = block
