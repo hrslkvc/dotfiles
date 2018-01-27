@@ -1,22 +1,22 @@
-! Base16 Gruvbox dark, medium
-! Scheme: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+! Base16 Solarized Light
+! Scheme: Ethan Schoonover (http://ethanschoonover.com/solarized)
 
-#define base00 #282828
-#define base01 #3c3836
-#define base02 #504945
-#define base03 #665c54
-#define base04 #bdae93
-#define base05 #d5c4a1
-#define base06 #ebdbb2
-#define base07 #fbf1c7
-#define base08 #fb4934
-#define base09 #fe8019
-#define base0A #fabd2f
-#define base0B #b8bb26
-#define base0C #8ec07c
-#define base0D #83a598
-#define base0E #d3869b
-#define base0F #d65d0e
+#define base00 #fdf6e3
+#define base01 #eee8d5
+#define base02 #93a1a1
+#define base03 #839496
+#define base04 #657b83
+#define base05 #586e75
+#define base06 #073642
+#define base07 #002b36
+#define base08 #dc322f
+#define base09 #cb4b16
+#define base0A #b58900
+#define base0B #859900
+#define base0C #2aa198
+#define base0D #268bd2
+#define base0E #6c71c4
+#define base0F #d33682
 
 *foreground:   base05
 #ifdef background_opacity
@@ -53,32 +53,22 @@
 *color20:      base04
 *color21:      base06
 
+
 st.termname:     st-256color
-st.font: Ubuntu Mono:size=11:antialias=true:autohint=true;
-st.bold_font:    1
+st.font: Source Code Pro for Powerline:size=10:antialias=true:autohint=true;
+st.bold_font:    0
 st.cursorblinkstyle: 0
 st.cursorblinkontype: 0
 st.blinktimeout: 500
 
 
+URxvt.font: xft:Source Code Pro for Powerline-10
 URxvt.cursorBlink: 1
-URxvt.letterSpace: -1
 URxvt.lineSpace: 4
-URxvt.font: xft:Ubuntu Mono:size=11
+URxvt.letterspace: 0
+
 URxvt.scrollBar: false
 URxvt.intensityStyles: false
 URxvt*saveLines: 1000
 
-rofi.color-enabled: true
-!                  bg       border   separator
-rofi.color-window: base00,  base07,  base0E
-!                  bg       fg       bg-alt   hl-bg    hl-fg
-rofi.color-normal: base00, base05, base04, base01
-rofi.color-active: base03, base05, base03, base03, base03
-rofi.color-urgent: #cc241d, #282828, #cc241d, #fb4934, #282828
 
-rofi.separator-style: solid
-rofi.sidebar-mode: true
-rofi.bw: 0
-rofi.columns: 1
-rofi.padding: 16

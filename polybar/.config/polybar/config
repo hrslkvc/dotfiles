@@ -10,9 +10,9 @@
 [colors]
 
 ! hard contrast: *background: #1d2021
-background = #282828
+background = #fdf6e3
 ! soft contrast: *background: #32302f
-foreground = #d5c4a1
+foreground = #073642
 ! Black + DarkGrey
 color0 =  #282828
 color8 =  #928374
@@ -66,8 +66,6 @@ modules-center = xwindow
 modules-right = weather date powermenu
 
 tray-position = right
-tray-background = #32302f
-tray-foreground = #d5c4a1
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev

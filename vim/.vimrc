@@ -8,9 +8,8 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'morhetz/gruvbox'
 Plugin 'Raimondi/delimitMate'
 Plugin 'chriskempson/base16-vim'
 " All of your Plugins must be added before the following line
@@ -28,8 +27,8 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-colorscheme gruvbox
-set background=dark
+colorscheme solarized
+set background=light
 "let base16colorspace=256
 set showcmd
 set linespace=10
