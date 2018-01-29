@@ -54,18 +54,10 @@
 *color21:      base06
 
 
-st.termname:     st-256color
-st.font: Source Code Pro for Powerline:size=10:antialias=true:autohint=true;
-st.bold_font:    0
-st.cursorblinkstyle: 0
-st.cursorblinkontype: 0
-st.blinktimeout: 500
 
 
-URxvt.font: xft:Source Code Pro for Powerline-10
+URxvt.font: xft:Hack:size=12
 URxvt.cursorBlink: 1
-URxvt.lineSpace: 4
-URxvt.letterspace: 0
 
 URxvt.scrollBar: false
 URxvt.intensityStyles: false
